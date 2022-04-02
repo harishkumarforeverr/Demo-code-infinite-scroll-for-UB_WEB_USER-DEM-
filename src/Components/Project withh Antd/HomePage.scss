@@ -1,0 +1,57 @@
+.calender {
+  margin: 2%;
+  .ant-form-item-label {
+    text-align: left !important;
+  }
+}
+
+.table {
+  width: 90%;
+  margin: 0 auto;
+  .ant-table-cell {
+    text-align: center;
+  }
+}
+.ant-table-pagination.ant-pagination {
+  display: flex;
+  justify-content: center;
+  margin-top: 6%;
+}
+.table{
+/// Scroll bar with managed height
+::-webkit-scrollbar {
+  width: 0.8rem;
+  // display: block;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  box-shadow: inset 0 0 5px #2d80b5;
+  border-radius: 100rem;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+  // background-color:$md-primary;
+  background: #2d80b5;
+  border-radius: 190px;
+  border-right: none;
+  border-left: none;
+}
+
+// /* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  // background-color:$md-primary;
+  background: #2d80b5;
+}
+// ::-webkit-scrollbar-track-piece:start {
+//   background: transparent;
+//   // margin-top: 10px;
+//   // padding-top: 10px;
+// }
+::-webkit-scrollbar-button {
+  width: 50px; //for horizontal scrollbar
+  // height: 200px; //for vertical scrollbar
+}
+
+}
