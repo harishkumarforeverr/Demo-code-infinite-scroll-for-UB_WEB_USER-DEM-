@@ -1,5 +1,5 @@
 import React, { useState, useEffect, useMemo, useRef } from "react";
-import { List, Pagination, Avatar, Skeleton, Divider } from "antd";
+import { List, Pagination, Avatar, Icon, Skeleton, Divider } from "antd";
 import InfiniteScroll from "react-infinite-scroll-component";
 import "./App.scss";
 import "antd/dist/antd.css";
@@ -13,7 +13,12 @@ const InfiniteScrollbar = () => {
   const [data, setData] = useState([0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10]);
   const BackupData = [
     0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 0, 1, 2, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 0,
-    1, 2, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 0, 1, 2,
+    1, 2, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 0, 1, 2, 0, 1, 2, 3, 4, 5, 6, 7, 8, 9,
+    10, 0, 1, 2, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 0, 1, 2, 1, 2, 3, 4, 5, 6, 7, 8,
+    9, 10, 0, 1, 2, 0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 0, 1, 2, 1, 2, 3, 4, 5, 6,
+    7, 8, 9, 10, 0, 1, 2, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 0, 1, 2, 0, 1, 2, 3, 4,
+    5, 6, 7, 8, 9, 10, 0, 1, 2, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 0, 1, 2, 1, 2, 3,
+    4, 5, 6, 7, 8, 9, 10, 0, 1, 2,
   ];
   useEffect(() => {
     console.log(parseInt(orginal / 10), "count", count);
@@ -46,6 +51,28 @@ const InfiniteScrollbar = () => {
         setCount(6);
       } else if (viewCount >= 61 && viewCount <= 70) {
         setCount(7);
+      } else if (viewCount >= 71 && viewCount <= 80) {
+        setCount(8);
+      } else if (viewCount >= 81 && viewCount <= 90) {
+        setCount(9);
+      } else if (viewCount >= 91 && viewCount <= 100) {
+        setCount(10);
+      } else if (viewCount >= 101 && viewCount <= 110) {
+        setCount(11);
+      } else if (viewCount >= 111 && viewCount <= 120) {
+        setCount(12);
+      } else if (viewCount >= 121 && viewCount <= 130) {
+        setCount(13);
+      } else if (viewCount >= 131 && viewCount <= 140) {
+        setCount(14);
+      } else if (viewCount >= 141 && viewCount <= 150) {
+        setCount(15);
+      } else if (viewCount >= 151 && viewCount <= 160) {
+        setCount(16);
+      } else if (viewCount >= 161 && viewCount <= 170) {
+        setCount(17);
+      } else if (viewCount >= 171 && viewCount <= 180) {
+        setCount(18);
       }
     }
   };
@@ -171,6 +198,45 @@ const InfiniteScrollbar = () => {
                   if (type === "next") {
                     return "";
                   }
+                  if (type === "jump-prev") {
+                    return (
+                      <>
+                        <Icon
+                          style={{
+                            color: "white",
+                            marginRight: "-1rem",
+                          }}
+                          type="double-left"
+                        />{" "}
+                        <Icon
+                          style={{
+                            color: "white",
+                          }}
+                          type="double-left"
+                        />
+                      </>
+                    );
+                  }
+                  if (type === "jump-next") {
+                    return (
+                      <>
+                        <Icon
+                          style={{
+                            color: "white",
+                            marginRight: "-1rem",
+                          }}
+                          type="double-right"
+                        />{" "}
+                        <Icon
+                          style={{
+                            color: "white",
+                          }}
+                          type="double-right"
+                        />
+                      </>
+                    );
+                  }
+                  console.log("type", type);
                   return (
                     <a
                       onClick={() => {
