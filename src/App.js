@@ -10,16 +10,12 @@ const InfiniteScrollbar = () => {
   const [loading, setLoading] = useState(true);
   let [count, setCount] = useState(1);
   let [Track, setTrack] = useState(true);
-  const [data, setData] = useState([0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10]);
   const BackupData = [
     0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 0, 1, 2, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 0,
-    1, 2, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 0, 1, 2, 0, 1, 2, 3, 4, 5, 6, 7, 8, 9,
-    10, 0, 1, 2, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 0, 1, 2, 1, 2, 3, 4, 5, 6, 7, 8,
-    9, 10, 0, 1, 2, 0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 0, 1, 2, 1, 2, 3, 4, 5, 6,
-    7, 8, 9, 10, 0, 1, 2, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 0, 1, 2, 0, 1, 2, 3, 4,
-    5, 6, 7, 8, 9, 10, 0, 1, 2, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 0, 1, 2, 1, 2, 3,
-    4, 5, 6, 7, 8, 9, 10, 0, 1, 2,
+    1, 2, 1, 2, 3, 4, 5,
   ];
+  const [data, setData] = useState(BackupData.slice(0, 12));
+
   useEffect(() => {
     console.log(parseInt(orginal / 10), "count", count);
     if (count > parseInt(orginal / 10)) {
@@ -129,7 +125,7 @@ const InfiniteScrollbar = () => {
   }, [loading]);
 
   return (
-    <div>
+    <div className="infiniteScrollbar">
       <div
         id="hh"
         style={{
@@ -145,6 +141,33 @@ const InfiniteScrollbar = () => {
             overflow: "auto",
           }}
         >
+          {" "}
+          <h1>Header</h1>
+          <h1>Header</h1>
+          <h1>Header</h1>
+          <h1>Header</h1>
+          <h1>Header</h1>
+          <h1>Header</h1>
+          <h1>Header</h1>
+          <h1>Header</h1>
+          <h1>Header</h1>
+          <h1>Header</h1>
+          <h1>Header</h1>
+          <h1>Header</h1>
+          <h1>Header</h1>
+          <h1>Header</h1>
+          <h1>Header</h1>
+          <h1>Header</h1>
+          <h1>Header</h1>
+          <h1>Header</h1>
+          <h1>Header</h1>
+          <h1>Header</h1>
+          <h1>Header</h1>
+          <h1>Header</h1>
+          <h1>Header</h1>
+          <h1>Header</h1>
+          <h1>Header</h1>
+          <h1>Header</h1>
           <InfiniteScroll
             dataLength={data.length} // data length
             next={() => {
@@ -172,10 +195,8 @@ const InfiniteScrollbar = () => {
               renderItem={(item, i) => (
                 <List.Item key={i}>
                   <div>
-                    <span id={i} ref={targetRef}>
-                      {i}{" "}
-                    </span>
-                    content
+                    <span id={i} ref={targetRef}></span>
+                    content {i}
                   </div>
                 </List.Item>
               )}
@@ -261,6 +282,52 @@ const InfiniteScrollbar = () => {
               />
             )}
           </InfiniteScroll>{" "}
+          {data.length == orginal && (
+            <div style={{}}>
+              <h1>footer</h1>
+              <h1>footer</h1>
+              <h1>footer</h1>
+              <h1>footer</h1>
+              <h1>footer</h1>
+              <h1>footer</h1>
+              <h1>footer</h1>
+              <h1>footer</h1>
+              <h1>footer</h1>
+              <h1>footer</h1>
+              <h1>footer</h1>
+              <h1>footer</h1>
+              <h1>footer</h1>
+              <h1>footer</h1>
+              <h1>footer</h1>
+              <h1>footer</h1>
+              <h1>footer</h1>
+              <h1>footer</h1>
+              <h1>footer</h1>
+              <h1>footer</h1>
+              <h1>footer</h1>
+            </div>
+          )}
+          {/* <h1>footer</h1>
+          <h1>footer</h1>
+          <h1>footer</h1>
+          <h1>footer</h1>
+          <h1>footer</h1>
+          <h1>footer</h1>
+          <h1>footer</h1>
+          <h1>footer</h1>
+          <h1>footer</h1>
+          <h1>footer</h1>
+          <h1>footer</h1>
+          <h1>footer</h1>
+          <h1>footer</h1>
+          <h1>footer</h1>
+          <h1>footer</h1>
+          <h1>footer</h1>
+          <h1>footer</h1>
+          <h1>footer</h1>
+          <h1>footer</h1>
+          <h1>footer</h1>
+          <h1>footer</h1> */}
         </div>
       </div>
     </div>
